@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Layoutss/AuthProvider';
 
 const Registration = () => {
+  const{createUser}=useContext(AuthContext)
 const handleregister=e=>{
+ 
   e.preventDefault()
   const form = e.target;
   const photo=form.photo.value
@@ -10,7 +13,13 @@ const handleregister=e=>{
  const password=form.password.value
 const info={photo,email,name,password}
 console.log(info)
-
+createUser(email, password)
+.then(res=>{
+  console.log(res.user)
+})
+.catch(err=>{
+  console.log(err)
+})
 
 
 }
