@@ -21,7 +21,7 @@ fetch('homecard.json')
           data?.map((item)=>
          
           <div  key={item.id} className="card w-36 glass ">
-             <Link to='/add'>
+             <Link to='/product'>
       <figure><img src={item.image} alt="car!"/></figure>
       <div className="card-body">
         <h2 className="card-title">{item.name}</h2>

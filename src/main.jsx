@@ -12,6 +12,7 @@ import UpdateProduct from './COMPONENT/Pages/UpdateProduct.jsx';
 import Login from './COMPONENT/Pages/Login.jsx';
 import Registration from './COMPONENT/Pages/Registration.jsx';
 import ROuts from './COMPONENT/Pages/ROuts.jsx';
+import Products from './COMPONENT/Pages/Products.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
     {
       path:'/regi',
       element:<Registration></Registration>
+    },
+    {
+      path:'/product',
+      element:<Products></Products>
+      ,loader:()=>fetch('http://localhost:5000/products')
     }
     ]
   },
