@@ -7,7 +7,7 @@ const Header = () => {
   <li> <NavLink to='/regi'>registration</NavLink></li>
   <li> <NavLink to='/login'>login</NavLink></li>
   <li> <NavLink to='/add'> addproduct</NavLink></li>
-  <li> <NavLink to='/update'> update product</NavLink></li>
+  {/* <li> <NavLink to='/update'> update product</NavLink></li> */}
   
   </>
   return (
