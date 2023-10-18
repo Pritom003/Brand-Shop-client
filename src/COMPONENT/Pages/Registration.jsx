@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../Layoutss/AuthProvider';
 
 const Registration = () => {
-  const{createUser}=useContext(AuthContext)
+  const{createUser,creategooglesignup}=useContext(AuthContext)
 const handleregister=e=>{
  
   e.preventDefault()
@@ -23,6 +23,16 @@ createUser(email, password)
 
 
 }
+const handlegooglepop = () => {
+  creategooglesignup()
+    .then((res) => {
+      console.log('user', res.user);
+    })
+    .catch((error) => {
+      console.log('err', error.message);
+    });
+};
+
 
 
 
@@ -70,6 +80,15 @@ createUser(email, password)
               <button className="btn btn-primary">Registration</button>
             </div>
           </form>
+        </div>
+        <div className="">
+          <button
+            onClick={handlegooglepop}
+            className="flex shadow-2xl items-center justify-center py-12 md:py-24 px-2 md:px-10 border-cyan-800 border-4 align-middle md:gap-2 text-sm  md:text-xl font-bold"
+          >
+            Sign in with Google
+            
+          </button>
         </div>
       </div>
     </div>
