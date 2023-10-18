@@ -5,11 +5,12 @@ import Login from './Login';
 import Registration from './Registration';
 import AddProduct from './AddProduct';
 import Header from '../Layoutss/Headers';
+import Footer from '../Layoutss/Footer';
 // import UpdateProduct from './UpdateProduct';
 
 const ROuts = () => {
   return (
-    <div>
+    <div className='max-w-5xl mx-auto'>
       <Header></Header>
 <Outlet>
 <Home></Home>
@@ -17,6 +18,7 @@ const ROuts = () => {
 <Registration></Registration>
 <AddProduct></AddProduct>
 </Outlet>
+<Footer></Footer>
     </div>
   );
 };
