@@ -3,9 +3,20 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Productcard = ({product}) => {
-  const { _id, name,bandName,type,price, rating,description,photo}=product
+  const { _id, name,brandName,type,price, rating,description,photo}=product
 
     
+
+// ci2.webphttps://i.ibb.co/nk84fXw/22997.jpghttps://i.ibb.co/YNgk7NT/gucci-jog.jpg
+
+
+// const handlepost=_id=>{
+
+
+// }
+
+
+  
     const handledelete=_id=>{
       console.log(_id)
       Swal.fire({
@@ -46,18 +57,39 @@ const Productcard = ({product}) => {
     <div>
       <div >
 
-<div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row">
-    <img src={photo} className="max-w-sm rounded-lg shadow-2xl" />
-    <div>
-      <h1 className="text-5xl font-bold">{name}</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-     <Link to={`/update/${_id}`}> <button className="btn btn-primary">update</button></Link>
-      <button
-      onClick={()=>handledelete(_id)}
-      className="btn btn-primary">delete</button>
+
+    
+
+
+
+
+
+
+
+<div className='grid justify-center align-middle items-center p-2 gap-2 mt-10'>
+<div className="card   bg-base-100 shadow-xl">
+  <figure><img src={photo} alt="Album"/></figure>
+  <div className="card-body">
+    <h2 className="card-title text-3xl">{brandName}</h2>
+    <p>{description}</p>
+    <div className='grid grid-cols-2 justify-start  items-center gap-2'>
+    <p className='font-bold'> Product Name:{name}</p>
+    <p className='font-bold'> Price:${price}</p>
+    <p>Product type:{type}</p>
+    <p>Rating: {rating}</p>
+   
     </div>
+   <Link to={`/details/${_id}`}>
+   <button 
+    
+    className="btn btn-primary  py-2" 
+    style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)'}}>
+      View Details
+      </button>
+   
+   </Link>
   </div>
+</div>
 </div>
                   
         </div>

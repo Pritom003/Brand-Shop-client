@@ -14,10 +14,16 @@ import Registration from './COMPONENT/Pages/Registration.jsx';
 import ROuts from './COMPONENT/Pages/ROuts.jsx';
 import Products from './COMPONENT/Pages/Products.jsx';
 import AuthProvider from './COMPONENT/Layoutss/AuthProvider.jsx';
+import Errorpage from './COMPONENT/Pages/Errorpage.jsx';
+import Privaterout from './COMPONENT/Layoutss/PrivateRout.jsx';
+// import Details from './COMPONENT/Pages/Details.jsx';
+import Detail from './COMPONENT/Pages/Details.jsx';
+import MyCart from './COMPONENT/Pages/MyCart.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <ROuts></ROuts>,
+    errorElement:<Errorpage></Errorpage>,
     children:[
       {path:"/",
       
@@ -25,8 +31,20 @@ const router = createBrowserRouter([
     },
     {
       path:'/Add',
-      element:<AddProduct></AddProduct>
+      element:<Privaterout><AddProduct></AddProduct></Privaterout>
     },
+    {
+      path: '/details/:id',
+      element: <Privaterout><Detail></Detail></Privaterout>,
+      loader: ({ params }) => fetch(`http://localhost:5000/products/id/${params.id}`),
+    },
+    {
+      path: '/cart',
+      element: <Privaterout><MyCart></MyCart></Privaterout>,
+      // loader: ({ params }) => fetch(`http://localhost:5000/products/id/${params.id}`),
+    },
+    
+    
     {
       path:'/update/:id',
       element:<UpdateProduct></UpdateProduct>,
@@ -42,9 +60,9 @@ const router = createBrowserRouter([
       element:<Registration></Registration>
     },
     {
-      path:'/product',
-      element:<Products></Products>
-      ,loader:()=>fetch('http://localhost:5000/products')
+      path: '/product/:brandName',
+      element: <Products></Products>,
+      loader: ({ params }) => fetch(`http://localhost:5000/products/brand/${params.brandName}`),
     }
     ]
   },

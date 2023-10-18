@@ -18,7 +18,7 @@ const ROuts = () => {
 <Registration></Registration>
 <AddProduct></AddProduct>
 </Outlet>
-<Footer></Footer>
+
     </div>
   );
 };

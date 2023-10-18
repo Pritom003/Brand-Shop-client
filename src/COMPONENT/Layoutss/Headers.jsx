@@ -1,10 +1,25 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { GiClothes } from "react-icons/gi";
+import { AuthContext } from './AuthProvider';
 const Header = () => {
+  const {user ,logout}=useContext(AuthContext)
+  // console.log(user.photoURL)
+  const handlesignout=()=>{
+    logout()
+    .then(res=>{
+      console.log('logged out',res)
+
+    })
+    .catch(err=>{
+      console.log('error logged out',err)
+    })
+  }
+
+
   const link=<>
   <li> <NavLink to='/'>Home</NavLink></li>
-  <li> <NavLink to='/regi'>registration</NavLink></li>
+  <li> <NavLink to='/cart'>MY Cart</NavLink></li>
   <li> <NavLink to='/login'>login</NavLink></li>
   <li> <NavLink to='/add'> addproduct</NavLink></li>
   {/* <li> <NavLink to='/update'> update product</NavLink></li> */}
@@ -26,7 +41,9 @@ const Header = () => {
      <p >
      <GiClothes className='text-purple-400 text-2xl'></GiClothes>
      </p>
-    <h1 className=" text-xl font-bold" style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
+    <h1 className=" text-xl font-bold"
+     style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)',
+      WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
         BrandBoulevard
       </h1>
     </div>
@@ -37,7 +54,20 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+  {
+    user ?   <div className='flex justify-center mr-2 align-middle items-center gap-2'>
+    <img className='h-[12px]  rounded-full' src={user.photoURL} alt="" />
+<p className='text-purple-600'>{user.displayName}</p>  </div>:''
+   }
+    
+   {
+    user ? <button onClick={handlesignout} className=' font-bold md:mr-2 text-purple-950'>
+      
+   <p>Logout</p>
+       
+      </button>: <Link to='/login'><button
+     className='text-xl  font-bold mr-2 text-purple-950'>login</button></Link>
+   }
   </div>
 </div>
     </div>
