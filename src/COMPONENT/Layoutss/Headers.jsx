@@ -1,9 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { GiClothes } from "react-icons/gi";
 import { AuthContext } from './AuthProvider';
+import { BsCloudSun,BsMoonFill } from "react-icons/bs";
 const Header = () => {
   const {user ,logout}=useContext(AuthContext)
+
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    // add custom data-theme attribute to html tag required to update theme using DaisyUI
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
   // console.log(user.photoURL)
   const handlesignout=()=>{
     logout()
@@ -69,6 +87,43 @@ const Header = () => {
      className='text-xl  font-bold mr-2 text-purple-950'>login</button></Link>
    }
   </div>
+
+
+
+ <div>
+  
+ 
+ </div>
+ <div className="flex-none">
+        {/* Toggle button here */}
+        <button className="btn btn-square btn-ghost">
+          <label className="swap swap-rotate w-12 h-12">
+            <input type="checkbox"
+            
+            
+              onChange={handleToggle}
+              // show toggle image based on localstorage theme
+              checked={theme === "light" ? false : true}
+            
+            />
+            {/* light theme sun image */}
+            
+            <div className="w-8 h-8 swap-on">
+            <BsCloudSun></BsCloudSun>
+            </div>
+            {/* dark theme moon image */}
+            
+            <div className="w-8 h-8 swap-off">
+            <BsMoonFill></BsMoonFill>
+            </div>
+          </label>
+        </button>
+      </div>
+
+
+
+
+
 </div>
     </div>
   );

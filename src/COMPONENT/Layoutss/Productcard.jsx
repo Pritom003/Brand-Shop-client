@@ -7,49 +7,10 @@ const Productcard = ({product}) => {
 
     
 
-// ci2.webphttps://i.ibb.co/nk84fXw/22997.jpghttps://i.ibb.co/YNgk7NT/gucci-jog.jpg
-
-
-// const handlepost=_id=>{
-
-
-// }
 
 
   
-    const handledelete=_id=>{
-      console.log(_id)
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          
-          // DELETE OPERATION 
-
-          fetch(`http://localhost:5000/products/${_id}`,{
-            method:'DELETE'
-          })
-          .then(res=>res.json())
-          .then(data=>{
-            console.log(data)
-            if(data.deletedCount>0){
-              Swal.fire(
-            'Deleted!',
-            'Your products has been deleted.',
-            'success'
-          )
-
-            }
-          })
-        }
-      })
-    }
+    
    
     
     

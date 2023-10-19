@@ -67,6 +67,8 @@ const UpdateProduct = () => {
           <input
             type="photo"
             name="photo"
+            defaultValue={photo}
+            
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
           />
         </div>
@@ -76,6 +78,7 @@ const UpdateProduct = () => {
           <input
             type="text"
             name="name"
+            defaultValue={name}
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
           />
         </div>
@@ -85,6 +88,7 @@ const UpdateProduct = () => {
           <input
             type="text"
             name="brandName"
+            defaultValue={brandName}
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
           />
         </div>
@@ -93,6 +97,7 @@ const UpdateProduct = () => {
           <label className="block text-sm font-medium text-gray-700">Type</label>
           <select
             name="type"
+            defaultValue={type}
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
           >
             <option value="shoes">Shoes</option>
@@ -108,6 +113,7 @@ const UpdateProduct = () => {
           <input
             type="number"
             name="price"
+            defaultValue={price}
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
           />
         </div>
@@ -117,6 +123,7 @@ const UpdateProduct = () => {
           <input
             type="number"
             name="rating"
+            defaultValue={rating}
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
           />
         </div>
@@ -125,6 +132,7 @@ const UpdateProduct = () => {
           <label className="block text-sm font-medium text-gray-700">Description</label>
           <textarea
             name="description"
+            defaultValue={description}
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
           ></textarea>
         </div>
