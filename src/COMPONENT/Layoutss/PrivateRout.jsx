@@ -8,7 +8,7 @@ const Privaterout = ({children}) => {
   
   const {user,loading}=useContext(AuthContext)
   const location =useLocation()
-  console.log(location)
+  // console.log(location)
   if(loading){
     return <h1><span className="loading loading-spinner loading-lg"></span></h1>
 

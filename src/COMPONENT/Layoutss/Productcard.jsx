@@ -86,8 +86,15 @@ const Productcard = ({product}) => {
     style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)'}}>
       View Details
       </button>
+
    
    </Link>
+   <Link to={`/update/${_id}`}>   <button 
+    
+    className="btn btn-primary  py-2" 
+    style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)'}}>
+      Updatedetails
+      </button></Link>
   </div>
 </div>
 </div>
