@@ -28,7 +28,7 @@ const Detail = () => {
               title: 'Success!',
               text: 'product  Successfully added to curt',
               icon: 'success',
-              confirmButtonText: 'Cool'
+              confirmButtonText: 'okey'
           })
           }
           
@@ -45,14 +45,21 @@ const Detail = () => {
   // console.log(icart);
 
   return (
-    <div className='gridjustify-center items-center'>
-      <h3 className='text-2xl text-purple-700'>
-        Your Selected product details:
+    <div className='grid justify-center items-center'>
+      <div>
+    
+      </div>
+      <h3 className='text-2xl text-purple-700 underline font-bold'>
+        Your  Selected Product's Details:
       </h3>
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{loadeddata.brandName}</h2>
           <p>{loadeddata.description}</p>
+          <p className='font-bold text-2xl '>price : ${loadeddata.price}</p>
+          <div className='font-bold'>product preview: <img 
+           className="relative inline-block h-[120px] w-[120px] rounded-full border-2 border-white object-cover object-center"
+           src={loadeddata.photo} alt="" /></div>
           
           <button onClick={() => handleAddProduct(loadeddata.brandName, loadeddata.name ,loadeddata.rating,
             loadeddata.price ,user.email)} className="btn btn-primary py-2" style={{ background: 'linear-gradient(135deg, #7B64B6, #C898B9)' }}>

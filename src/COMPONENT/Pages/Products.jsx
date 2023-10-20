@@ -55,7 +55,7 @@ const Products = () => {
 </div>
 
 
-      <h1 className='text-6xl m-4 text-yellow-700 underline'>Available products:{loadeddata.length}</h1>
+      <h1 className='text-2xl m-4 text-yellow-700 underline'>Available products:{loadeddata.length}</h1>
       {
         loadeddata.length>0 ? loadeddata.map((product,index) => <Productcard key={index} product={product}></Productcard>):
        <div> 

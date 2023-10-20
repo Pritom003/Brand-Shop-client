@@ -44,41 +44,43 @@ const MyCart = () => {
 
   return (
     <div>
-      <h1 className='text-2xl font-bold text-purple-800 underline mt-5 mb-10'>Your selected items</h1>
-      {datas?.map((item, index) => (
-        // Conditionally render the item or "no data selected" message
-        item.user === user.email ? (
-          <div key={index} className="overflow-x-auto">
-            <table className="table table-xs table-pin-rows table-pin-cols">
-              <thead>
-                <tr>
-                  <th>Brand Name</th>
-                  <td>Name</td>
-                  <td>Job</td>
-                  <td>price</td>
-                  <td>Remove Item</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>{item.brandName}</th>
-                  <td>{item.name}</td>
-                  <td>{item.type}</td>
-                  <td>${item.price}</td>
-                  <td>
-                    <button onClick={() => handledelete(item._id)} className='btn-secondary px-2'>
-                      X
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <p key={index}></p>
-        )
-      ))}
-    </div>
+  <h1 className='text-2xl font-bold text-purple-800 underline mt-5 mb-10'>Your selected items</h1>
+  {datas?.map((item, index) => (
+    // Conditionally render the item or "no data selected" message
+    item.user === user.email ? (
+      <div key={index} className="overflow-x-auto">
+        <table className="table table-xs sm:table-sm lg:table-lg table-pin-rows table-pin-cols">
+          <thead>
+            <tr>
+              <th className="w-1/4 sm:w-1/6 lg:w-1/4">Brand Name</th>
+              <td className="w-1/4 sm:w-1/6 lg:w-1/4">type</td>
+            
+              <td className="w-1/4 sm:w-1/6 lg:w-1/4">Price</td>
+              <td className="w-1/6 sm:w-1/6 lg:w-1/6">Remove Item</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{item.brandName}</th>
+              <td>{item.name}</td>
+              
+              <td>${item.price}</td>
+              <td>
+                <button onClick={() => handledelete(item._id)} className='btn-secondary px-2'>
+                  X
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    ) : (
+      <p key={index}></p>
+    )
+  ))}
+  
+</div>
+
   );
 };
 

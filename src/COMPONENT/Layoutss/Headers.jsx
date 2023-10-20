@@ -5,8 +5,8 @@ import { AuthContext } from './AuthProvider';
 import { BsCloudSun,BsMoonFill } from "react-icons/bs";
 const Header = () => {
   const {user ,logout}=useContext(AuthContext)
-// console.log(user.email)
-const [loading,setloading]=useState(false)
+console.log(user)
+// const [loading,setloading]=useState(false)
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -34,7 +34,7 @@ const [loading,setloading]=useState(false)
       console.log('error logged out',err)
     })
   }
-
+// console.log(user.photoURL)
 
   const link=<>
   <li> <NavLink to='/'>Home</NavLink></li>
@@ -78,12 +78,12 @@ const [loading,setloading]=useState(false)
   {
     user ?   <div className='flex  justify-center  align-middle items-center gap-2'>
     <img className='h-[20px]  rounded-full' src={user.photoURL} alt="" />
-<div className='text-purple-600 flex-none gap-2 text-center '>
+<div className='text-purple-600 flex-none gap-2 text-center mr-4'>
 {user.displayName}</div> </div>:''
    }
     
    {
-    user ? <button onClick={handlesignout} className=' font-bold md:mr-2 text-purple-950'>
+    user ? <button onClick={handlesignout} className=' font-bold md:mr-2 text-purple-300'>
       
    <p>Logout</p>
        

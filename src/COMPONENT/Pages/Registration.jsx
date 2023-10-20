@@ -3,6 +3,7 @@ import { AuthContext } from '../Layoutss/AuthProvider';
 import { Link } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
+import {  FcGoogle} from "react-icons/fc";
 
 const Registration = () => {
   const { createUser, creategooglesignup } = useContext(AuthContext);
@@ -75,8 +76,8 @@ const Registration = () => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Registration now!</h1>
-          <p className="py-6">
+          <h1 className="  text-2xl lg:text-5xl font-bold">Registration now!</h1>
+          <p className="lg:py-6 ">
             Welcome to{' '}
             <span
               className='font-bold'
@@ -88,10 +89,10 @@ const Registration = () => {
             >
               BrandBoulevard
             </span>
-            , your gateway to a world of fashion and lifestyle possibilities. Registering with us isn't just an option; it's the key to a richer, more fulfilling shopping experience.
+            
           </p>
         </div>
-        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 w-full max-w-[350px] shadow-2xl bg-base-100">
           <form onSubmit={handleregister} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -146,6 +147,8 @@ const Registration = () => {
             className="flex shadow-2xl items-center justify-center py-12 md:py-24 px-2 md:px-10 border-purple-200 border-4 align-middle md:gap-2 text-sm md:text-xl font-bold"
           >
             Sign in with Google
+            <div className='text-3xl'><FcGoogle></FcGoogle>
+           </div>
           </button>
         </div>
       </div>

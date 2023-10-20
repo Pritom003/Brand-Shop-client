@@ -1,5 +1,6 @@
 import React from 'react';
 import { GiClothes } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const HERO = () => {
   // https://i.ibb.co/y5LfKBv/headers-img.jpg
@@ -18,9 +19,9 @@ const HERO = () => {
         BrandBoulevard
       </h1>
       <p className="mb-5">Elevating Your Style, Brand by Brand</p>
-      <button className="btn btn-primary py-2" style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)'}}>
+     <Link to='/regi'> <button className="btn btn-primary py-2" style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)'}}>
         Get Started
-      </button>
+      </button></Link>
     </div>
   </div>
 </div>
