@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Productcard from '../Layoutss/Productcard';
-
+import {BsFillEmojiFrownFill}  from "react-icons/bs";
 const Products = () => {
   const loadeddata=useLoaderData()
   return (
@@ -55,10 +55,15 @@ const Products = () => {
 </div>
 
 
-      <h1 className='text-6xl m-4 text-purple-950 underline'>Available products:{loadeddata.length}</h1>
+      <h1 className='text-6xl m-4 text-yellow-700 underline'>Available products:{loadeddata.length}</h1>
       {
         loadeddata.length>0 ? loadeddata.map((product,index) => <Productcard key={index} product={product}></Productcard>):
-        <p>nodata found</p>
+       <div> 
+       <p className='text-yellow-700 text-center text-2xl font-bold'> Sorry the product is stocked out  <br />
+     new products will arrive soon.....
+     .....</p></div>
+       
+        
       }
      
     </div>

@@ -5,7 +5,8 @@ import { AuthContext } from './AuthProvider';
 import { BsCloudSun,BsMoonFill } from "react-icons/bs";
 const Header = () => {
   const {user ,logout}=useContext(AuthContext)
-
+// console.log(user.email)
+const [loading,setloading]=useState(false)
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -37,15 +38,17 @@ const Header = () => {
 
   const link=<>
   <li> <NavLink to='/'>Home</NavLink></li>
-  <li> <NavLink to='/cart'>MY Cart</NavLink></li>
+  {/* <li> <NavLink to={`/cart/user/${user?user.email :loading}`}>MY Cart</NavLink></li> */}
+  <li> <NavLink to='/cart'>MY Cart</NavLink></li> 
+
   <li> <NavLink to='/login'>login</NavLink></li>
   <li> <NavLink to='/add'> addproduct</NavLink></li>
   {/* <li> <NavLink to='/update'> update product</NavLink></li> */}
   
   </>
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div >
+      <div className=" lg:navbar grid items-center align-middle justify-center text-center bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -57,9 +60,9 @@ const Header = () => {
     </div>
     <div className='flex gap-2 justify-center items-center align-middle'>
      <p >
-     <GiClothes className='text-purple-400 text-2xl'></GiClothes>
+     <GiClothes className='text-purple-400 text-lg lg:text-2xl'></GiClothes>
      </p>
-    <h1 className=" text-xl font-bold"
+    <h1 className=" text-sm lg:text-xl font-bold"
      style={{background: 'linear-gradient(135deg, #7B64B6, #C898B9)',
       WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
         BrandBoulevard
@@ -71,11 +74,12 @@ const Header = () => {
     {link}
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end ">
   {
-    user ?   <div className='flex justify-center mr-2 align-middle items-center gap-2'>
-    <img className='h-[12px]  rounded-full' src={user.photoURL} alt="" />
-<p className='text-purple-600'>{user.displayName}</p>  </div>:''
+    user ?   <div className='flex  justify-center  align-middle items-center gap-2'>
+    <img className='h-[20px]  rounded-full' src={user.photoURL} alt="" />
+<div className='text-purple-600 flex-none gap-2 text-center '>
+{user.displayName}</div> </div>:''
    }
     
    {
@@ -91,9 +95,6 @@ const Header = () => {
 
 
  <div>
-  
- 
- </div>
  <div className="flex-none">
         {/* Toggle button here */}
         <button className="btn btn-square btn-ghost">
@@ -119,6 +120,10 @@ const Header = () => {
           </label>
         </button>
       </div>
+  
+ 
+ </div>
+
 
 
 

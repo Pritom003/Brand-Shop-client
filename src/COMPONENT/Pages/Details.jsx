@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Layoutss/AuthProvider';
 
 const Detail = () => {
-  // const [icart, setIcart] = useState([]);
+  const {user}=useContext(AuthContext)
+  
   const loadeddata = useLoaderData();
+  // const navigate = useNavigate();
+  const handleAddProduct = (brandName,name,rating, price,user) => {
+    // console.log(item._id);
+    
 
-  const handleAddProduct = (item) => {
-    console.log(item._id);
-
-   
+   const data={brandName,name,rating, price,user}
+   console.log(data)
       fetch('http://localhost:5000/carts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(item),
+        body: JSON.stringify(data),
       })
         .then((response) => response.json())
         .then((data) => {
@@ -41,8 +45,8 @@ const Detail = () => {
   // console.log(icart);
 
   return (
-    <div className='flex justify-center items-center'>
-      <h3 className='text-2xl'>
+    <div className='gridjustify-center items-center'>
+      <h3 className='text-2xl text-purple-700'>
         Your Selected product details:
       </h3>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -50,7 +54,8 @@ const Detail = () => {
           <h2 className="card-title">{loadeddata.brandName}</h2>
           <p>{loadeddata.description}</p>
           
-          <button onClick={() => handleAddProduct(loadeddata)} className="btn btn-primary py-2" style={{ background: 'linear-gradient(135deg, #7B64B6, #C898B9)' }}>
+          <button onClick={() => handleAddProduct(loadeddata.brandName, loadeddata.name ,loadeddata.rating,
+            loadeddata.price ,user.email)} className="btn btn-primary py-2" style={{ background: 'linear-gradient(135deg, #7B64B6, #C898B9)' }}>
             Add to my cart
           </button>
         </div>

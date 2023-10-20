@@ -34,10 +34,11 @@ const AddProduct = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
+          console.log(data)
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Your work has been saved',
+            title: 'Your product has been added',
             showConfirmButton: false,
             timer: 1500,
           });
@@ -46,10 +47,15 @@ const AddProduct = () => {
   };
 
   return (
-    <div>
+    <div className='grid justify-center align-middle items-center'>
+      <div>
+        <h2 className='text-2xl font-bold text-center m-4 text-purple-800'>
+          Add product to the products collections 
+        </h2>
+      </div>
       <form onSubmit={handlechange} className="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Image</label>
+          <label className="block text-sm font-medium text-purple-700">Image</label>
           <input
             type="photo"
             name="photo"
@@ -58,7 +64,7 @@ const AddProduct = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Name</label>
+          <label className="block text-sm font-medium text-purple-700">Name</label>
           <input
             type="text"
             name="name"
@@ -67,7 +73,7 @@ const AddProduct = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Band Name</label>
+          <label className="block text-sm font-medium text-purple-700">Band Name</label>
           <input
             type="text"
             name="bandName"
@@ -76,7 +82,7 @@ const AddProduct = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Type</label>
+          <label className="block text-sm font-medium text-purple-700">Type</label>
           <select
             name="type"
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
@@ -90,7 +96,7 @@ const AddProduct = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Price</label>
+          <label className="block text-sm font-medium text-purple-700">Price</label>
           <input
             type="number"
             name="price"
@@ -99,7 +105,7 @@ const AddProduct = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Rating</label>
+          <label className="block text-sm font-medium text-purple-700">Rating</label>
           <input
             type="number"
             name="rating"
@@ -108,7 +114,7 @@ const AddProduct = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Description</label>
+          <label className="block text-sm font-medium text-purple-700">Description</label>
           <textarea
             name="description"
             className="mt-1 p-2 rounded-lg border border-gray-300 focus:ring focus:ring-indigo-200 focus:outline-none"
