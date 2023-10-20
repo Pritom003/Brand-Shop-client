@@ -39,7 +39,7 @@ const [loading,setloading]=useState(false)
   const link=<>
   <li> <NavLink to='/'>Home</NavLink></li>
   {/* <li> <NavLink to={`/cart/user/${user?user.email :loading}`}>MY Cart</NavLink></li> */}
-  <li> <NavLink to='/cart'>MY Cart</NavLink></li> 
+  <li> <NavLink to='/carts'>MY Cart</NavLink></li> 
 
   <li> <NavLink to='/login'>login</NavLink></li>
   <li> <NavLink to='/add'> addproduct</NavLink></li>

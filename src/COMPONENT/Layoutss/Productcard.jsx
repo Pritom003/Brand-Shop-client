@@ -5,27 +5,11 @@ import Swal from 'sweetalert2';
 const Productcard = ({product}) => {
   const { _id, name,brandName,type,price, rating,description,photo}=product
 
-    
 
-
-
-  
-    
-   
-    
     
   return (
     <div>
       <div >
-
-
-    
-
-
-
-
-
-
 
 <div className='grid justify-center align-middle items-center p-2 gap-2 mt-10'>
 <div className="card   bg-base-100 shadow-xl">

@@ -38,7 +38,7 @@ const UpdateProduct = () => {
     };
     console.log(mydata);
     // send backend data
-    fetch(`https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/products/${_id}`, {
+    fetch(`https://brand-shop-server-8nsu4evdj-nilima-jahan-pritoms-projects.vercel.app/products/${_id}`, {
       method: 'PUT',
             headers: {
                 'content-type': 'application/json'

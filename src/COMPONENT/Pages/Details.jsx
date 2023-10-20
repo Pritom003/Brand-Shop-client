@@ -14,7 +14,7 @@ const Detail = () => {
 
    const data={brandName,name,rating, price,user}
    console.log(data)
-      fetch('https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/carts', {
+      fetch('https://brand-shop-server-8nsu4evdj-nilima-jahan-pritoms-projects.vercel.app/carts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

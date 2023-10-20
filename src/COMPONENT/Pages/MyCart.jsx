@@ -22,7 +22,7 @@ const MyCart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // DELETE OPERATION
-        fetch(`https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/carts/id/${_id}`, {
+        fetch(`https://brand-shop-server-8nsu4evdj-nilima-jahan-pritoms-projects.vercel.app/carts/id/${_id}`, {
           method: 'DELETE'
         })
           .then((res) => res.json())

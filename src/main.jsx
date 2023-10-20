@@ -36,24 +36,20 @@ const router = createBrowserRouter([
     {
       path: '/details/:id',
       element: <Privaterout><Detail></Detail></Privaterout>,
-      loader: ({ params }) => fetch(`https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/products/id/${params.id}`),
+      loader: ({ params }) => fetch(`https://brand-shop-server-8nsu4evdj-nilima-jahan-pritoms-projects.vercel.app/products/id/${params.id}`),
     },    
-    //   {
-    //       path: '/cart/user/:user',
-    //       element: <Privaterout><MyCart></MyCart></Privaterout>,
-    //       loader:({params})=>fetch(`https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/carts/user/${params.user}`)
-    // }, 
+    
     {
       path: '/carts',
       element: <Privaterout><MyCart></MyCart></Privaterout>,
-      loader:()=>fetch(`https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/carts`)
+      loader:()=>fetch(`https://brand-shop-server-8nsu4evdj-nilima-jahan-pritoms-projects.vercel.app/carts`)
       
 }, 
     
     {
       path:'/update/:id',
       element:<UpdateProduct></UpdateProduct>,
-      loader:({params})=>fetch(`https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/products/${params.id}`)
+      loader:({params})=>fetch(`https://brand-shop-server-8nsu4evdj-nilima-jahan-pritoms-projects.vercel.app/products/${params.id}`)
     },
     {
       path:'/login',
@@ -67,7 +63,7 @@ const router = createBrowserRouter([
     {
       path: '/product/:brandName',
       element: <Products></Products>,
-      loader: ({ params }) => fetch(`https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/products/brand/${params.brandName}`),
+      loader: ({ params }) => fetch(`https://brand-shop-server-8nsu4evdj-nilima-jahan-pritoms-projects.vercel.app/products/brand/${params.brandName}`),
     }
     ]
   },
