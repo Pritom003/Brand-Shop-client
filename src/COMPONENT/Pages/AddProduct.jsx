@@ -23,7 +23,7 @@ const AddProduct = () => {
     };
     console.log(mydata);
     // send backend data
-    fetch('http://localhost:5000/products', {
+    fetch('https://brand-shop-server-lvs6clg9w-nilima-jahan-pritoms-projects.vercel.app/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
