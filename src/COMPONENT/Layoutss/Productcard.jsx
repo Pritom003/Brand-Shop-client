@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Addvideo from '../Pages/Addvideo';
 
 const Productcard = ({product}) => {
   const { _id, name,brandName,type,price, rating,description,photo}=product
@@ -10,7 +11,6 @@ const Productcard = ({product}) => {
   return (
     <div>
       <div >
-
 <div className='grid justify-center align-middle items-center p-2 gap-2 mt-10'>
 <div className="card   bg-base-100 shadow-xl">
   <figure><img src={photo} alt="Album"/></figure>

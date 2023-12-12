@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Productcard from '../Layoutss/Productcard';
 import {BsFillEmojiFrownFill}  from "react-icons/bs";
+import Addvideo from './Addvideo';
+import NIKeadd from './NIKeadd';
 const Products = () => {
   const loadeddata=useLoaderData()
   return (
@@ -53,9 +55,12 @@ const Products = () => {
     </div>
   </div>
 </div>
+{/* <div><Addvideo></Addvideo></div> */}
 
+      {/* <h1 className='text-2xl m-4 text-yellow-700 underline'>Available products:{loadeddata.length}</h1> */}
+      {loadeddata.length > 0 && loadeddata.some(product => product.brandName === 'GUCCI') && <Addvideo />}
+      {loadeddata.length > 0 && loadeddata.some(product => product.brandName === 'NIKE') && <NIKeadd />}
 
-      <h1 className='text-2xl m-4 text-yellow-700 underline'>Available products:{loadeddata.length}</h1>
       {
         loadeddata.length>0 ? loadeddata.map((product,index) => <Productcard key={index} product={product}></Productcard>):
        <div> 

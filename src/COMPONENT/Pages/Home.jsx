@@ -5,6 +5,10 @@ import Footer from "../Layoutss/Footer";
 import Brandcard from "../Layoutss/Brandcard";
 
 import { BsFacebook,BsInstagram,BsTwitter } from "react-icons/bs";
+import { PopoverComponent } from "./keep";
+// import { TimelineComponent } from "./keep";
+// import { TimelineBody } from "keep-react/lib/esm/components/Timeline/TimelineBody";
+// import { TimelineComponent } from "./keep";
 const Home = () => {
   const [data,setdata]=useState()
   const [brandname,setbrand]=useState()
@@ -32,7 +36,7 @@ fetch('homecard.json')
         </h3>
       </div>
       <div 
-      className='grid grid-cols-1 
+      className='grid grid-cols-1  md:grid-cols-2
        lg:grid-cols-3 justify-center items-center
         gap-4 align-middle'>
         {
@@ -94,6 +98,9 @@ fetch('homecard.json')
     <p> Excellent customer service, including easy returns and responsive support, ensures a hassle-free shopping experience.</p>
   </div>
 </div>
+    </div>
+    <div>
+      <PopoverComponent></PopoverComponent>
     </div>
     </div>
     <div className="text-center mb-10">
